@@ -24,6 +24,8 @@ const postADS = async (req, res, next) => {
 
         const currentDate = new Date();
         const expirationDate = new Date(currentDate);
+        if(adsInfo.expiryDay==undefined||adsInfo.expiryDay==null)  
+            adsInfo.expiryDay=10
         expirationDate.setDate(expirationDate.getDate() + adsInfo.expiryDay);
         adsInfo.expirationDate = expirationDate;
 
